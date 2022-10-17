@@ -1,0 +1,47 @@
+body {
+    background-color: black;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h2 {
+    color: white;
+}
+
+.panel {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.panel:hover {
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.red {
+    border-bottom-right-radius: 100%;
+    background: red;
+}
+
+.blue {
+    border-bottom-left-radius: 100%;
+    background: blue;
+}
+
+.green {
+    border-top-right-radius: 100%;
+    background: green;
+}
+
+.yellow {
+    border-top-left-radius: 100%;
+    background: yellow;
+}
+
+
+
+.active{
+    background-color: white;
+}
