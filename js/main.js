@@ -19,46 +19,49 @@ const rounds = document.getElementById('counter')
 startGameBtn.addEventListener('click', newGame)
 resetGameBtn.addEventListener('click', clearGame)
 
+
 function enableClicks() {
-    yellow.addEventListener('click', function () {
-        player.push(yellow)
-        playerTurn();
-        console.log(player.length)
-    })
-    green.addEventListener('click', function () {
-        player.push(green)
-        playerTurn();
-        console.log(player.length)
-    })
-    blue.addEventListener('click', function () {
-        player.push(blue)
-        playerTurn();
-        console.log(player.length)
-    })
-    red.addEventListener('click', function () {
-        player.push(red)
-        playerTurn();
-        console.log(player.length)
-    })
+    yellow.addEventListener('click', yellowPush)
+
+    green.addEventListener('click', greenPush)
+
+    blue.addEventListener('click', bluePush)
+
+    red.addEventListener('click', redPush)
 }
 
 function disableClicks() {
-    yellow.removeEventListener('click', function () {
-        player.push(yellow)
-        console.log(player.length)
-    })
-    green.removeEventListener('click', function () {
-        player.push(green)
-        console.log(player.length)
-    })
-    blue.removeEventListener('click', function () {
-        player.push(blue)
-        console.log(player.length)
-    })
-    red.removeEventListener('click', function () {
-        player.push(red)
-        console.log(player.length)
-    })
+
+    yellow.removeEventListener('click', yellowPush)
+
+    green.removeEventListener('click', greenPush)
+
+    blue.removeEventListener('click', bluePush)
+
+    red.removeEventListener('click', redPush)
+
+}
+
+
+function yellowPush() {
+    player.push(yellow)
+    playerTurn();
+    console.log(player.length)
+}
+function greenPush() {
+    player.push(green)
+    playerTurn();
+    console.log(player.length)
+}
+function bluePush() {
+    player.push(blue)
+    playerTurn();
+    console.log(player.length)
+}
+function redPush() {
+    player.push(red)
+    playerTurn();
+    console.log(player.length)
 }
 
 
@@ -76,6 +79,7 @@ function newGame() {
 function clearGame() {
     currentGame = [];
     round = 0;
+    rounds.innerText = round
     player = []
     startGameBtn.addEventListener('click', newGame)
 }
@@ -124,13 +128,13 @@ function clearPlayer() {
 function playerTurn() {
     if (player[player.length - 1] !== currentGame[player.length - 1]) {
         console.log('game over!')
+        disableClicks()
         clearGame();
     } else {
         console.log('nice!');
-        let check = player.length === currentGame.length;
-        if (check) {
+        if (player.length === currentGame.length) {
             if (round == 10) {
-                console.log('Congrats!');
+                console.log('Congrats! You win!!');
             } else {
                 console.log('Next round!');
                 nextLevel();
@@ -143,6 +147,12 @@ function nextLevel() {
     generateMove()
     addRound()
 }
+
+
+
+
+
+
 
 
 
