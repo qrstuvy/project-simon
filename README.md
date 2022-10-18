@@ -6,7 +6,7 @@
 - Pressing start will high landing page and bring up game page
 
 ## Wireframe
-![Quick sketch of game](images/quicksketch.png)
+![Quick sketch of game](/images/quicksketch.png)
 
 ### Pseudocode
 <!-- Player, and currentGame sequence. Counter keeps track of the clicks -->

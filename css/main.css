@@ -1,5 +1,7 @@
 body {
-    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031934689616863284/og.png');
+    background-image: url('/images/simonthings.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     background-attachment: fixed;
     user-select: none;
@@ -9,29 +11,36 @@ body {
 #game-div {
     border: 1px solid rgba(54, 39, 12, 0.5);
     border-radius: 15px;
-    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031780101949509693/unknown.png');
+    background-image: url('/images/blueboard.png');
     background-size: cover;
     width: 1400px;
     height: 800px;
     margin: 40px auto;
     margin-bottom: 0px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
+
+}
+
+#play-btn {
+    margin-top: 710px;
 }
 
 #images-container {
-    border: 1px solid rgb(155, 135, 93);
+    border: 1px solid rgba(44, 44, 44, 0.5);
     float: right;
     border-radius: 12px;
     margin: 60px 23px;
     padding: 6px;
-    background-color: rgb(189, 169, 128);
+    background-image: url('/images/lights.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     animation: fadeIn 1.2s;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), 0px 6px 6px rgba(0, 0, 0, 0.2);
 }
 
 #images-container img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 #images-grid {
@@ -39,7 +48,7 @@ body {
     grid-template-columns: 120px 120px 120px 120px 120px 120px 120px;
     grid-template-rows: 120px 120px 120px 120px;
     width: 820px;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .2);
     border-radius: 9px;
 }
 
@@ -48,24 +57,6 @@ h1 {
     position: relative;
     z-index: 1;
 }
-
-/* h1::before {
-    position: absolute;
-    content: "";
-    left: 50%;
-    top: 70px;
-    width: 500px;
-    height: 130px;
-    transform: skew(-20deg) translateX(-50%);
-    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(27, 27, 27, 0.7), rgba(20, 20, 20, 0.8));
-z-index: -1;
-border-radius: 3px;
-}
-
-*/
-
-
-
 
 h3 {
     font-size: 25px;
@@ -132,12 +123,12 @@ img {
 #instructions-div {
     position: absolute;
     color: black;
-    width: 50%;
-    top: 50%;
-    left: 25%;
+    margin-top: 250px;
+    width: 500px;
+    left: 30%;
     z-index: 1;
     border-radius: 10px;
-    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031780101949509693/unknown.png');
+    background-image: url('/images/blueboard.png');
     padding: 0 0 10px 0;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
@@ -148,39 +139,6 @@ img {
 }
 
 
-
-/* .panel {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.panel:hover {
-    box-sizing: border-box;
-    box-shadow: inset 0px 0px 0px 3px cyan;
-}
-
-.red {
-    border-bottom-right-radius: 100%;
-    background: red;
-}
-
-.blue {
-    border-bottom-left-radius: 100%;
-    background: blue;
-}
-
-.green {
-    border-top-right-radius: 100%;
-    background: green;
-}
-
-.yellow {
-    border-top-left-radius: 100%;
-    background: yellow;
-} */
-
 .active {
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .3);
 }

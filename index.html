@@ -12,81 +12,76 @@
 </head>
 
 <body>
-    <div id="game-div">
+    <button id="play-btn">Play Game</button>
+    <div id="game-div" class="hide">
         <section id="intro">
-            <h1>
-                <img src="https://cdn.discordapp.com/attachments/1015711303978987540/1031794568527613952/pngwing.com.png"
-                    id="title" width="30%" height="30%">
-            </h1>
             <div id="landing-page">
-                <button id="play-btn">Play Game</button><br>
-                <button id="instructions-btn">Instructions</button>
+                <!-- <button id="play-btn">Play Game</button><br>
+                <button id="instructions-btn">Instructions</button> -->
             </div>
             <div id="instructions-div" class="hide">
                 <h3>Instructions</h3>
+                <p>Classic simon game with a sprinkle of Stranger Things!</p>
                 <p>Watch, remember, repeat!</p>
-                <p>Follow the lights and repeat random sequences in the correct order!
-                </p>
+                <p>Follow the lights and repeat random sequences in the correct order!</p>
+                <p>Game over if wrong pattern!</p>
                 <button id="okay-btn">Okay</button>
             </div>
         </section>
+
+
+
+
         <!-- Game section -->
         <section id="text-section" class="hide">
             <div id="timer-div">
                 <div id="timer-wrapper">
-                    <p><span id="game-text">Text goes here</span></p>
+                    <h3>Defeat the demogorgon by reaching 10 rounds!
+                    </h3>
+                    <p><span id="game-text">Let's go!</span></p>
                 </div>
             </div>
             <div id="prompt-text">
             </div>
 
             <p>Round: <span id="counter">0</span></p>
+            <p><img src="/images/el.png"></p>
         </section>
 
 
         <section id="images-container" class="hide">
             <div id="images-grid">
-                <span class="letter-a"><img src="images/a.png"></span>
-                <span class="letter-b"><img src="images/b.png"></span>
-                <span class="letter-c"><img src="images/c.png"></span>
-                <span class="letter-d"><img src="images/d.png"></span>
-                <span class="letter-e"><img src="images/e.png"></span>
-                <span class="letter-f"><img src="images/f.png"></span>
-                <span class="letter-g"><img src="images/g.png"></span>
-                <span class="letter-h"><img src="images/h.png"></span>
-                <span class="letter-i"><img src="images/i.png"></span>
-                <span class="letter-j"><img src="images/j.png"></span>
-                <span class="letter-k"><img src="images/k.png"></span>
-                <span class="letter-l"><img src="images/l.png"></span>
-                <span class="letter-m"><img src="images/m.png"></span>
-                <span class="letter-n"><img src="images/n.png"></span>
-                <span class="letter-o"><img src="images/o.png"></span>
-                <span class="letter-p"><img src="images/p.png"></span>
-                <span class="letter-q"><img src="images/q.png"></span>
-                <span class="letter-r"><img src="images/r.png"></span>
-                <span class="letter-s"><img src="images/s.png"></span>
-                <span class="letter-t"><img src="images/t.png"></span>
-                <span class="letter-u"><img src="images/u.png"></span>
-                <span class="letter-v"><img src="images/v.png"></span>
-                <span class="letter-w"><img src="images/w.png"></span>
-                <span class="letter-x"><img src="images/x.png"></span>
-                <span class="letter-y"><img src="images/y.png"></span>
-                <span class="letter-z"><img src="images/z.png"></span>
+                <div id="letter-a"><img src="images/a.png"></div>
+                <div id="letter-b"><img src="images/b.png"></div>
+                <div id="letter-c"><img src="images/c.png"></div>
+                <div id="letter-d"><img src="images/d.png"></div>
+                <div id="letter-e"><img src="images/e.png"></div>
+                <div id="letter-f"><img src="images/f.png"></div>
+                <div id="letter-g"><img src="images/g.png"></div>
+                <div id="letter-h"><img src="images/h.png"></div>
+                <div id="letter-i"><img src="images/i.png"></div>
+                <div id="letter-j"><img src="images/j.png"></div>
+                <div id="letter-k"><img src="images/k.png"></div>
+                <div id="letter-l"><img src="images/l.png"></div>
+                <div id="letter-m"><img src="images/m.png"></div>
+                <div id="letter-n"><img src="images/n.png"></div>
+                <div id="letter-o"><img src="images/o.png"></div>
+                <div id="letter-p"><img src="images/p.png"></div>
+                <div id="letter-q"><img src="images/q.png"></div>
+                <div id="letter-r"><img src="images/r.png"></div>
+                <div id="letter-s"><img src="images/s.png"></div>
+                <div id="letter-t"><img src="images/t.png"></div>
+                <div id="letter-u"><img src="images/u.png"></div>
+                <div id="letter-v"><img src="images/v.png"></div>
+                <div id="letter-w"><img src="images/w.png"></div>
+                <div id="letter-x"><img src="images/x.png"></div>
+                <div id="letter-y"><img src="images/y.png"></div>
+                <div id="letter-z"><img src="images/z.png"></div>
             </div>
-
-
-            <!-- <div>
-                <div class="panel yellow" id="yellow"></div>
-                <div class="panel green" id="green"></div>
-            </div>
-            <div>
-                <div class="panel blue" id="blue"></div>
-                <div class="panel red" id="red"></div>
-            </div>
-            <div> -->
             <h4 id="game-text"></h4>
             <button class="start">Start Game</button>
             <button class="reset">Reset</button>
+            <button id="instructions-btn">Instructions</button>
             <button id="back">Back</button>
         </section>
     </div>
