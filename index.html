@@ -6,26 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <script defer src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
-    <title>Simon</title>
+    <title>Simon Game</title>
 </head>
 
 <body>
-    <h2 id="counter">0</h2>
-    <div>
-        <div class="panel yellow" id="yellow"></div>
-        <div class="panel green" id="green"></div>
-    </div>
-    <div>
-        <div class="panel blue" id="blue"></div>
-        <div class="panel red" id="red"></div>
-    </div>
-    <br>
-    <div>
-        <p id="result"></p>
-        <button class="start">Start Game</button>
-        <button class="reset">Reset</button>
+    <div id="game-div">
+        <section id="intro">
+            <h1>
+                <img src="https://cdn.discordapp.com/attachments/1015711303978987540/1031794568527613952/pngwing.com.png"
+                    id="title" width="30%" height="30%">
+            </h1>
+            <div id="landing-page">
+                <button id="play-btn">Play Game</button><br>
+                <button id="instructions-btn">Instructions</button>
+            </div>
+            <div id="instructions-div" class="hide">
+                <h3>Instructions</h3>
+                <p>Watch, remember, repeat!</p>
+                <p>Follow the lights and repeat random sequences in the correct order!
+                </p>
+                <button id="okay-btn">Okay</button>
+            </div>
+        </section>
+        <!-- Game section -->
+        <section id="game-section" class="hide">
+            <h2 id="counter">0</h2>
+            <div>
+                <div class="panel yellow" id="yellow"></div>
+                <div class="panel green" id="green"></div>
+            </div>
+            <div>
+                <div class="panel blue" id="blue"></div>
+                <div class="panel red" id="red"></div>
+            </div>
+            <div>
+                <h4 id="game-text"></h4>
+                <button class="start">Start Game</button>
+                <button class="reset">Reset</button>
+                <button id="back">Back</button>
+            </div>
+        </section>
     </div>
 </body>
 

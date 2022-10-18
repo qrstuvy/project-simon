@@ -1,16 +1,61 @@
 body {
-    background-color: black;
+    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031934689616863284/og.png');
     text-align: center;
-    margin-top: 30px;
+    background-attachment: fixed;
+    user-select: none;
+    font-family: sans-serif;
 }
 
-h2 {
-    color: white;
+#game-div {
+    border: 1px solid rgba(54, 39, 12, 0.5);
+    border-radius: 15px;
+    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031780101949509693/unknown.png');
+    background-size: cover;
+    width: 1400px;
+    height: 800px;
+    margin: 70px auto;
+    margin-bottom: 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
+
+h1 {
+    position: relative;
+    z-index: 1;
+}
+
+h1::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 70px;
+    width: 500px;
+    height: 130px;
+    transform: skew(-20deg) translateX(-50%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(27, 27, 27, 0.7), rgba(20, 20, 20, 0.8));
+    z-index: -1;
+    border-radius: 3px;
+}
+
+
+h3 {
+    font-size: 25px;
+    margin: 10px;
+}
+
+
+p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#game-section {
+    margin-top: -80px;
+}
+
 
 .panel {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     display: inline-block;
     cursor: pointer;
 }
@@ -41,7 +86,53 @@ h2 {
 }
 
 
-
-.active{
+.active {
     background-color: white;
+}
+
+
+button {
+    font-size: 1.3em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(58, 56, 56);
+    background-color: rgba(255, 255, 255, 0.671);
+    margin: 10px;
+}
+
+button:hover {
+    box-shadow: 0 8px 5px -5px rgb(43, 40, 40);
+    transform: translateY(-3px);
+    transition: 0.1s;
+}
+
+
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    margin-top: -80px;
+}
+
+#intro {
+    text-align: center;
+    position: relative;
+}
+
+#instructions-div {
+    position: absolute;
+    color: black;
+    width: 50%;
+    top: 50%;
+    left: 25%;
+    z-index: 1;
+    border-radius: 10px;
+    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031780101949509693/unknown.png');
+    padding: 0 0 10px 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.hide {
+    display: none;
 }

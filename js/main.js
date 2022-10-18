@@ -1,24 +1,73 @@
-// constants
-let player = []
-let currentGame = []
-let round = 0
+// Landing page buttons
+const playGameBtn = document.getElementById('play-btn')
+const instructionsBtn = document.getElementById('instructions-btn')
+const okayBtn = document.getElementById('okay-btn')
+
+// Constants
 const countValue = document.getElementById("count")
-const startGameBtn = document.querySelector('.start')
-const resetGameBtn = document.querySelector('.reset')
-const result = document.querySelector("#result")
 const yellow = document.getElementById('yellow')
 const green = document.getElementById('green')
 const blue = document.getElementById('blue')
 const red = document.getElementById('red')
-let possibilities = [green, blue, red, yellow]
 const rounds = document.getElementById('counter')
 
-// // possibilities: ['#A', '#B', '#C', '#D', '#E', '#F', '#G', '#H', '#I', '#J', '#K', '#L', '#M', '#N', '#O', '#P', '#Q', '#R', '#S', '#T', '#U', '#V', '#W', '#X', '#Y', '#Z'],
+// variables
+let player = []
+let currentGame = []
+let round = 0
+let possibilities = [green, blue, red, yellow]
 
-// Event listeners
+
+// Game Buttons
+const startGameBtn = document.querySelector('.start')
 startGameBtn.addEventListener('click', newGame)
+
+const resetGameBtn = document.querySelector('.reset')
 resetGameBtn.addEventListener('click', clearGame)
 
+const backBtn = document.getElementById('back')
+
+
+// Sections and divs DOM
+const landingPage = document.getElementById('landing-page')
+const instructionsPage = document.getElementById('instructions-div')
+const gameSection = document.getElementById('game-section')
+const gameText = document.getElementById('game-text')
+
+// sets the timer conditions and displays on the UI
+const runTimer = () => {
+    if (time === 0) {
+        isGameOver = true
+    } else {
+        time--
+    }
+    timerText.innerText = time
+}
+
+
+// Hides landing page and loads game page
+function loadGame() {
+    landingPage.classList.add('hide')
+    gameSection.classList.remove('hide')
+}
+
+
+// Event Listeners
+backBtn.addEventListener('click', () => {
+    landingPage.classList.remove('hide')
+    gameSection.classList.add('hide')
+    clearGame()
+})
+
+playGameBtn.addEventListener('click', loadGame)
+
+instructionsBtn.addEventListener('click', () => {
+    instructionsPage.classList.remove('hide')
+})
+
+okayBtn.addEventListener('click', () => {
+    instructionsPage.classList.add('hide')
+})
 
 function enableClicks() {
     yellow.addEventListener('click', yellowPush)
@@ -43,24 +92,42 @@ function disableClicks() {
 }
 
 
+// Functions.push to player array
+
 function yellowPush() {
+    yellow.classList.add('active')
+    setTimeout(function () {
+        yellow.classList.remove('active')
+    }, 300)
     player.push(yellow)
-    playerTurn();
+    playerTurn()
     console.log(player.length)
 }
 function greenPush() {
+    green.classList.add('active')
+    setTimeout(function () {
+        green.classList.remove('active')
+    }, 300)
     player.push(green)
-    playerTurn();
+    playerTurn()
     console.log(player.length)
 }
 function bluePush() {
+    blue.classList.add('active')
+    setTimeout(function () {
+        blue.classList.remove('active')
+    }, 300)
     player.push(blue)
-    playerTurn();
+    playerTurn()
     console.log(player.length)
 }
 function redPush() {
+    red.classList.add('active')
+    setTimeout(function () {
+        red.classList.remove('active')
+    }, 300)
     player.push(red)
-    playerTurn();
+    playerTurn()
     console.log(player.length)
 }
 
@@ -69,7 +136,7 @@ function redPush() {
 // Functions when CPU is creating a new item to the sequence
 
 function newGame() {
-    clearGame();
+    clearGame()
     generateMove()
     startGameBtn.removeEventListener('click', newGame)
     addRound()
@@ -77,10 +144,11 @@ function newGame() {
 
 
 function clearGame() {
-    currentGame = [];
-    round = 0;
-    rounds.innerText = round
+    currentGame = []
     player = []
+    round = 0
+    rounds.innerText = round
+
     startGameBtn.addEventListener('click', newGame)
 }
 
@@ -91,9 +159,10 @@ function addRound() {
 
 // Generates a random move/color
 function generateMove() {
-    currentGame.push(possibilities[(Math.floor(Math.random() * possibilities.length))]);
-    showSequence();
-    disableClicks()
+    currentGame.push(possibilities[(Math.floor(Math.random() * possibilities.length))])
+    setTimeout(() => {
+        showSequence()
+    }, "600")
     console.log(currentGame)
 }
 
@@ -101,25 +170,24 @@ function generateMove() {
 function showSequence() {
     let i = 0;
     let sequence = setInterval(function () {
-        gamePlay(currentGame[i]);
+        gamePlay(currentGame[i])
         i++;
         if (i >= currentGame.length) {
-            clearInterval(sequence);
+            clearInterval(sequence)
         } enableClicks()
     }, 600)
-    clearPlayer();
+    clearPlayer()
 }
 
 
 function gamePlay(sequence) {
-    sequence.classList.add('active');
+    sequence.classList.add('active')
     setTimeout(function () {
-        sequence.classList.remove('active');
-    }, 300);
+        sequence.classList.remove('active')
+    }, 300)
 }
-
 function clearPlayer() {
-    player = [];
+    player = []
 }
 
 
@@ -128,15 +196,17 @@ function clearPlayer() {
 function playerTurn() {
     if (player[player.length - 1] !== currentGame[player.length - 1]) {
         console.log('game over!')
+        gameText.innerText = "Oh no, nice try! Game over."
         disableClicks()
-        clearGame();
     } else {
-        console.log('nice!');
+        console.log('nice!')
         if (player.length === currentGame.length) {
             if (round == 10) {
-                console.log('Congrats! You win!!');
+                console.log('Congrats! You win!!')
+                gameText.innerText = "Congrats! You win!!"
             } else {
-                console.log('Next round!');
+                console.log('Next round!')
+                gameText.innerText = "Nice! Next round!"
                 nextLevel();
             }
         }
@@ -147,15 +217,3 @@ function nextLevel() {
     generateMove()
     addRound()
 }
-
-
-
-
-
-
-
-
-
-
-
-
