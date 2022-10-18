@@ -13,17 +13,43 @@ body {
     background-size: cover;
     width: 1400px;
     height: 800px;
-    margin: 70px auto;
-    margin-bottom: 0;
+    margin: 40px auto;
+    margin-bottom: 0px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
+
+#images-container {
+    border: 1px solid rgb(155, 135, 93);
+    float: right;
+    border-radius: 12px;
+    margin: 60px 23px;
+    padding: 6px;
+    background-color: rgb(189, 169, 128);
+    animation: fadeIn 1.2s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), 0px 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+#images-container img {
+    width: 120px;
+    height: 120px;
+}
+
+#images-grid {
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px 120px 120px 120px;
+    grid-template-rows: 120px 120px 120px 120px;
+    width: 820px;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 9px;
+}
+
 
 h1 {
     position: relative;
     z-index: 1;
 }
 
-h1::before {
+/* h1::before {
     position: absolute;
     content: "";
     left: 50%;
@@ -31,10 +57,14 @@ h1::before {
     width: 500px;
     height: 130px;
     transform: skew(-20deg) translateX(-50%);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(27, 27, 27, 0.7), rgba(20, 20, 20, 0.8));
-    z-index: -1;
-    border-radius: 3px;
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(27, 27, 27, 0.7), rgba(20, 20, 20, 0.8));
+z-index: -1;
+border-radius: 3px;
 }
+
+*/
+
+
 
 
 h3 {
@@ -42,18 +72,84 @@ h3 {
     margin: 10px;
 }
 
-
 p {
     font-size: 20px;
     margin: 5px;
 }
 
-#game-section {
-    margin-top: -80px;
+#text-section {
+    width: 500px;
+    height: 610px;
+    float: left;
+    margin: 95px 0 95px 20px;
+    font-family: 'Play', sans-serif;
+    animation: fadeIn 1.2s;
+}
+
+#timer-div {
+    margin: 50px;
 }
 
 
-.panel {
+
+#timer-text {
+    color: white;
+    font-size: 1.6em;
+}
+
+#prompt-text {
+    margin: 120px 0 60px 0;
+}
+
+
+button {
+    font-size: 1.3em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(58, 56, 56);
+    background-color: rgba(255, 255, 255, 0.671);
+    margin: 10px;
+}
+
+button:hover {
+    box-shadow: 0 8px 5px -5px rgb(43, 40, 40);
+    transform: translateY(-3px);
+    transition: 0.1s;
+}
+
+
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+#intro {
+    text-align: center;
+    position: relative;
+}
+
+#instructions-div {
+    position: absolute;
+    color: black;
+    width: 50%;
+    top: 50%;
+    left: 25%;
+    z-index: 1;
+    border-radius: 10px;
+    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031780101949509693/unknown.png');
+    padding: 0 0 10px 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.hide {
+    display: none;
+}
+
+
+
+/* .panel {
     width: 100px;
     height: 100px;
     display: inline-block;
@@ -83,56 +179,8 @@ p {
 .yellow {
     border-top-left-radius: 100%;
     background: yellow;
-}
-
+} */
 
 .active {
-    background-color: white;
-}
-
-
-button {
-    font-size: 1.3em;
-    padding: 4px 10px;
-    border-radius: 5px;
-    border: 1px solid rgb(58, 56, 56);
-    background-color: rgba(255, 255, 255, 0.671);
-    margin: 10px;
-}
-
-button:hover {
-    box-shadow: 0 8px 5px -5px rgb(43, 40, 40);
-    transform: translateY(-3px);
-    transition: 0.1s;
-}
-
-
-img {
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    margin-top: -80px;
-}
-
-#intro {
-    text-align: center;
-    position: relative;
-}
-
-#instructions-div {
-    position: absolute;
-    color: black;
-    width: 50%;
-    top: 50%;
-    left: 25%;
-    z-index: 1;
-    border-radius: 10px;
-    background-image: url('https://cdn.discordapp.com/attachments/1015711303978987540/1031780101949509693/unknown.png');
-    padding: 0 0 10px 0;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
-}
-
-
-.hide {
-    display: none;
+    background-color: rgba(255, 255, 255, .6);
 }

@@ -28,11 +28,13 @@ resetGameBtn.addEventListener('click', clearGame)
 const backBtn = document.getElementById('back')
 
 
-// Sections and divs DOM
+// Sections, divs, and others
 const landingPage = document.getElementById('landing-page')
 const instructionsPage = document.getElementById('instructions-div')
-const gameSection = document.getElementById('game-section')
-const gameText = document.getElementById('game-text')
+const textSection = document.getElementById('text-section')
+const titleImg = document.getElementById('title')
+const imagesContainer = document.getElementById('images-container')
+const imagesGrid = document.getElementById('images-grid')
 
 // sets the timer conditions and displays on the UI
 const runTimer = () => {
@@ -48,14 +50,18 @@ const runTimer = () => {
 // Hides landing page and loads game page
 function loadGame() {
     landingPage.classList.add('hide')
-    gameSection.classList.remove('hide')
+    textSection.classList.remove('hide')
+    titleImg.classList.add('hide')
+    imagesContainer.classList.remove('hide')
 }
 
 
 // Event Listeners
 backBtn.addEventListener('click', () => {
     landingPage.classList.remove('hide')
-    gameSection.classList.add('hide')
+    textSection.classList.add('hide')
+    titleImg.classList.remove('hide')
+    imagesContainer.classList.add('hide')
     clearGame()
 })
 
