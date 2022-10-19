@@ -1,8 +1,3 @@
-// Landing page buttons
-const playGameBtn = document.getElementById('play-btn')
-const instructionsBtn = document.getElementById('instructions-btn')
-const okayBtn = document.getElementById('okay-btn')
-
 // Constants
 const rounds = document.getElementById('counter')
 const gameText = document.getElementById('game-text')
@@ -14,9 +9,15 @@ let player = []
 let currentGame = []
 let round = 0
 let possibilities = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
+let time = 5
 
 // Game Buttons
+const playGameBtn = document.getElementById('play-btn')
+
+const instructionsBtn = document.getElementById('instructions-btn')
+
+const okayBtn = document.getElementById('okay-btn')
+
 const startGameBtn = document.querySelector('.start')
 startGameBtn.addEventListener('click', newGame)
 
@@ -42,6 +43,7 @@ function loadGame() {
 }
 
 
+
 // Event Listeners
 backBtn.addEventListener('click', () => {
     textSection.classList.add('hide')
@@ -64,7 +66,7 @@ okayBtn.addEventListener('click', () => {
 
 // Enable/disable letter clicks
 
-function active(event) {
+function playerClick(event) {
     event.target.classList.add('active')
     setTimeout(function () {
         event.target.classList.remove('active')
@@ -75,18 +77,14 @@ function active(event) {
 }
 
 function enableClicks() {
-    imageGrid.addEventListener('click', active)
+    imageGrid.classList.remove('unclickable')
+    imageGrid.addEventListener('click', playerClick)
 }
 
 
 function disableClicks() {
-    imageGrid.removeEventListener('click', active)
+    imageGrid.classList.add('unclickable')
 }
-
-
-
-
-
 
 
 
@@ -132,7 +130,8 @@ function showSequence() {
         i++;
         if (i >= currentGame.length) {
             clearInterval(sequence)
-        } enableClicks()
+            enableClicks()
+        }
     }, 600)
     clearPlayer()
     console.log(player)
@@ -183,4 +182,5 @@ function playerTurn() {
 function nextLevel() {
     generateMove()
     addRound()
+    disableClicks()
 }
