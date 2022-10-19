@@ -1,3 +1,4 @@
+/* General body, heading and p styling---------------------------------------------------------------------------- */
 body {
     background-image: url('/images/simonthings.png');
     background-repeat: no-repeat;
@@ -8,6 +9,34 @@ body {
     font-family: sans-serif;
 }
 
+h1 {
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 21px;
+    margin: 10px;
+}
+
+p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+
+
+/* Initial landing page play button */
+#play-btn {
+    margin-top: 710px;
+}
+
+/* Hidden div that contains the text section and game container-------------------------------------------------- */
+/* Entire div */
 #game-div {
     border: 1px solid rgba(54, 39, 12, 0.5);
     border-radius: 15px;
@@ -20,10 +49,7 @@ body {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
-#play-btn {
-    margin-top: 710px;
-}
-
+/* Game container */
 #images-container {
     border: 1px solid rgba(44, 44, 44, 0.5);
     float: right;
@@ -42,6 +68,7 @@ body {
     height: 100px;
 }
 
+/* Grid containing the images of letters */
 #images-grid {
     display: grid;
     grid-template-columns: 120px 120px 120px 120px 120px 120px 120px;
@@ -51,22 +78,7 @@ body {
     border-radius: 9px;
 }
 
-
-h1 {
-    position: relative;
-    z-index: 1;
-}
-
-h3 {
-    font-size: 22px;
-    margin: 10px;
-}
-
-p {
-    font-size: 20px;
-    margin: 5px;
-}
-
+/* Text section with rounds styling --------------------------------------------------------------------------*/
 #text-section {
     width: 500px;
     height: 610px;
@@ -76,11 +88,19 @@ p {
     animation: fadeIn 1.2s;
 }
 
-#timer-div {
+#round-text {
     margin: 10px;
+    font-size: 24px;
+}
+
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 
+/* Button styling --------------------------------------------------------------------------------------------*/
 button {
     font-size: 1.3em;
     padding: 4px 10px;
@@ -97,12 +117,7 @@ button:hover {
 }
 
 
-img {
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-}
-
+/* Instructions section --------------------------------------------------------------------------------------*/
 #intro {
     text-align: center;
     position: relative;
@@ -122,6 +137,7 @@ img {
 }
 
 
+/* Classes to be added in the DOM -----------------------------------------------------------------------------*/
 .hide {
     display: none;
 }
@@ -130,10 +146,12 @@ img {
     pointer-events: none;
 }
 
+/* Flashes selected letters */
 .active {
     background-color: rgba(255, 255, 255, .3);
 }
 
+/* Animation ----------------------------------------------------------------------------------------------------*/
 @keyframes fadeIn {
     0% {
         opacity: 0.1;

@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js" defer></script>
 
-    <title>Simon Game</title>
+    <title>Simon Things</title>
 </head>
 
 <body>
+    <!-- Landing page and instructions ---------------------------------------------------------------------->
     <button id="play-btn">Play Game</button>
     <div id="game-div" class="hide">
         <section id="intro">
             <div id="instructions-div" class="hide">
-                <h3>Instructions</h3>
-                <p>Classic simon game with a Stranger Things twist.</p>
+                <h2>Instructions</h2>
+                <p>Classic Simon game with a Stranger Things twist.</p>
                 <p>Watch, remember, repeat!</p>
                 <p>Follow the lights and repeat random sequences in the correct order!</p>
                 <p>Game over if wrong pattern!</p>
@@ -27,16 +28,16 @@
 
 
 
-        <!-- Game section -->
+        <!-- Game grid section -------------------------------------------------------------------------------->
         <section id="text-section" class="hide">
-            <div id="timer-div">
-                <p id="timer-text">Timer goes here</p>
-                <p><strong>Round: </strong><span id="counter">0</span> of 10</p>
+            <div id="rounds-div">
+                <p id="round-text"><strong>Round: </strong><br><span id="counter">0</span> of 5</p>
             </div>
             <h3>
-                Help El defeat the demogorgon by reaching 10 rounds!
+                Help El defeat the demogorgon by reaching 5 rounds!
             </h3>
-            <img src="/images/el.png">
+            <img src="/images/el.png" class="victory hide">
+            <img src="/images/eldemo.png" class="starting-image">
             <p><span id="game-text">Let's go!</span></p>
         </section>
 
@@ -70,7 +71,6 @@
                 <div class="letters"><img src="images/y.png" id="y"></div>
                 <div class="letters"><img src="images/z.png" id="z"></div>
             </div>
-            <h4 id="game-text"></h4>
             <button class="start">Start Game</button>
             <button class="reset">Reset</button>
             <button id="instructions-btn">Instructions</button>
