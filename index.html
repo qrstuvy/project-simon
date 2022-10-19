@@ -15,13 +15,9 @@
     <button id="play-btn">Play Game</button>
     <div id="game-div" class="hide">
         <section id="intro">
-            <div id="landing-page">
-                <!-- <button id="play-btn">Play Game</button><br>
-                <button id="instructions-btn">Instructions</button> -->
-            </div>
             <div id="instructions-div" class="hide">
                 <h3>Instructions</h3>
-                <p>Classic simon game with a sprinkle of Stranger Things!</p>
+                <p>Classic simon game with a Stranger Things twist.</p>
                 <p>Watch, remember, repeat!</p>
                 <p>Follow the lights and repeat random sequences in the correct order!</p>
                 <p>Game over if wrong pattern!</p>
@@ -31,52 +27,48 @@
 
 
 
-
         <!-- Game section -->
         <section id="text-section" class="hide">
             <div id="timer-div">
-                <div id="timer-wrapper">
-                    <h3>Defeat the demogorgon by reaching 10 rounds!
-                    </h3>
-                    <p><span id="game-text">Let's go!</span></p>
-                </div>
+                <p id="timer-text">Timer goes here</p>
+                <p><strong>Round: </strong><span id="counter">0</span></p>
             </div>
-            <div id="prompt-text">
-            </div>
-
-            <p>Round: <span id="counter">0</span></p>
-            <p><img src="/images/el.png"></p>
+            <h3>
+                Help El defeat the demogorgon by reaching 10 rounds!
+            </h3>
+            <img src="/images/el.png">
+            <p><span id="game-text">Let's go!</span></p>
         </section>
 
 
         <section id="images-container" class="hide">
             <div id="images-grid">
-                <div id="letter-a"><img src="images/a.png"></div>
-                <div id="letter-b"><img src="images/b.png"></div>
-                <div id="letter-c"><img src="images/c.png"></div>
-                <div id="letter-d"><img src="images/d.png"></div>
-                <div id="letter-e"><img src="images/e.png"></div>
-                <div id="letter-f"><img src="images/f.png"></div>
-                <div id="letter-g"><img src="images/g.png"></div>
-                <div id="letter-h"><img src="images/h.png"></div>
-                <div id="letter-i"><img src="images/i.png"></div>
-                <div id="letter-j"><img src="images/j.png"></div>
-                <div id="letter-k"><img src="images/k.png"></div>
-                <div id="letter-l"><img src="images/l.png"></div>
-                <div id="letter-m"><img src="images/m.png"></div>
-                <div id="letter-n"><img src="images/n.png"></div>
-                <div id="letter-o"><img src="images/o.png"></div>
-                <div id="letter-p"><img src="images/p.png"></div>
-                <div id="letter-q"><img src="images/q.png"></div>
-                <div id="letter-r"><img src="images/r.png"></div>
-                <div id="letter-s"><img src="images/s.png"></div>
-                <div id="letter-t"><img src="images/t.png"></div>
-                <div id="letter-u"><img src="images/u.png"></div>
-                <div id="letter-v"><img src="images/v.png"></div>
-                <div id="letter-w"><img src="images/w.png"></div>
-                <div id="letter-x"><img src="images/x.png"></div>
-                <div id="letter-y"><img src="images/y.png"></div>
-                <div id="letter-z"><img src="images/z.png"></div>
+                <div class="letters"><img src="images/a.png" id="a"></div>
+                <div class="letters"><img src="images/b.png" id="b"></div>
+                <div class="letters"><img src="images/c.png" id="c"></div>
+                <div class="letters"><img src="images/d.png" id="d"></div>
+                <div class="letters"><img src="images/e.png" id="e"></div>
+                <div class="letters"><img src="images/f.png" id="f"></div>
+                <div class="letters"><img src="images/g.png" id="g"></div>
+                <div class="letters"><img src="images/h.png" id="h"></div>
+                <div class="letters"><img src="images/i.png" id="i"></div>
+                <div class="letters"><img src="images/j.png" id="j"></div>
+                <div class="letters"><img src="images/k.png" id="k"></div>
+                <div class="letters"><img src="images/l.png" id="l"></div>
+                <div class="letters"><img src="images/m.png" id="m"></div>
+                <div class="letters"><img src="images/n.png" id="n"></div>
+                <div class="letters"><img src="images/o.png" id="o"></div>
+                <div class="letters"><img src="images/p.png" id="p"></div>
+                <div class="letters"><img src="images/q.png" id="q"></div>
+                <div class="letters"><img src="images/r.png" id="r"></div>
+                <div class="letters"><img src="images/s.png" id="s"></div>
+                <div class="letters"><img src="images/t.png" id="t"></div>
+                <div class="letters"><img src="images/u.png" id="u"></div>
+                <div class="letters"><img src="images/v.png" id="v"></div>
+                <div class="letters"><img src="images/w.png" id="w"></div>
+                <div class="letters"><img src="images/x.png" id="x"></div>
+                <div class="letters"><img src="images/y.png" id="y"></div>
+                <div class="letters"><img src="images/z.png" id="z"></div>
             </div>
             <h4 id="game-text"></h4>
             <button class="start">Start Game</button>
@@ -84,8 +76,6 @@
             <button id="instructions-btn">Instructions</button>
             <button id="back">Back</button>
         </section>
-    </div>
-    </div>
 </body>
 
 </html>
