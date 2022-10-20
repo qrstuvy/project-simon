@@ -150,6 +150,7 @@ button:hover {
 }
 
 #game-over-image {
+    margin-top: 30px;
     animation: fadeIn 1.2s;
 }
 
