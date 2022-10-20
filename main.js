@@ -29,6 +29,10 @@ const resetGameBtn = document.querySelector('.reset')
 
 const backBtn = document.getElementById('back')
 
+const victoryBackMainBtn = document.getElementById('main-menu')
+
+const victoryBackGameBtn = document.getElementById('game-menu')
+
 
 // Sections, divs, and others------------------------------------------------------------------------------------
 const instructionsPage = document.getElementById('instructions-div')
@@ -47,6 +51,10 @@ const imagesGrid = document.querySelector('#images-grid')
 
 // Div containing difficulty buttons
 const difficultyPage = document.getElementById('difficulty-div')
+
+const victoryImage = document.getElementById('victory-image')
+
+const gameOverImage = document.getElementById('game-over-image')
 
 // Event Listeners for buttons-----------------------------------------------------------------------------------
 enterGameBtn.addEventListener('click', () => {
@@ -90,12 +98,50 @@ hardBtn.addEventListener('click', () => {
 })
 
 
+victoryBackMainBtn.addEventListener('click', () => {
+    gameDiv.classList.add('hide')
+    enterGameBtn.classList.remove('hide')
+    victoryImage.classList.add('hide')
+    victoryBackMainBtn.classList.add('hide')
+    victoryBackGameBtn.classList.add('hide')
+    gameOverImage.classList.add('hide')
+    clearGame()
+})
+
+victoryBackGameBtn.addEventListener('click', () => {
+    textSection.classList.remove('hide')
+    imagesContainer.classList.remove('hide')
+    victoryImage.classList.add('hide')
+    victoryBackMainBtn.classList.add('hide')
+    victoryBackGameBtn.classList.add('hide')
+    gameOverImage.classList.add('hide')
+    clearGame()
+})
+
+
 // Loads game page---------------------------------------------------------------------------------------------------
 function loadGame() {
     textSection.classList.remove('hide')
     imagesContainer.classList.remove('hide')
     gameDiv.classList.remove('hide')
     difficultyPage.classList.add('hide')
+}
+
+// Victory/Game-over screen--------------------------------------------------------------------------------------------
+function victoryScreen() {
+    textSection.classList.add('hide')
+    imagesContainer.classList.add('hide')
+    victoryImage.classList.remove('hide')
+    victoryBackMainBtn.classList.remove('hide')
+    victoryBackGameBtn.classList.remove('hide')
+}
+
+function gameOverScreen() {
+    textSection.classList.add('hide')
+    imagesContainer.classList.add('hide')
+    gameOverImage.classList.remove('hide')
+    victoryBackMainBtn.classList.remove('hide')
+    victoryBackGameBtn.classList.remove('hide')
 }
 
 
@@ -115,11 +161,9 @@ function enableClicks() {
     imagesGrid.addEventListener('click', playerClick)
 }
 
-
 function disableClicks() {
     imagesGrid.classList.add('unclickable')
 }
-
 
 
 // Game functionality/functions when CPU is creating a new item to the sequence---------------------------------
@@ -145,8 +189,8 @@ function clearGame() {
     rounds.innerText = round
     gameText.innerText = "Let's go!"
     startGameBtn.addEventListener('click', newGame)
-    initialImage()
 }
+
 // Adds to round counter/text everytime player proceeds to next level
 function addRound() {
     round++;
@@ -192,14 +236,13 @@ function clearPlayer() {
 // Function for checking player's input and comparing to currentGame's input--------------------------------------------
 function playerTurn() {
     if (player[player.length - 1] !== currentGame[player.length - 1]) {
-        gameText.innerText = "Oh no, nice try! Game over."
+        gameOverScreen()
         disableClicks()
     } else {
         if (player.length === currentGame.length) {
             if (difficulty === "normal") {
                 if (round == 5) {
-                    gameText.innerText = "Congratulations! You did it!"
-                    changeImage()
+                    victoryScreen()
                 } else if (round == 2) {
                     gameText.innerText = "WOW LOOK AT YOU! Keep going!"
                     nextLevel();
@@ -210,8 +253,7 @@ function playerTurn() {
             }
             else {
                 if (round == 10) {
-                    gameText.innerText = "Congratulations! You did it!"
-                    changeImage()
+                    victoryScreen()
                 } else if (round == 5) {
                     gameText.innerText = "WOW LOOK AT YOU! Keep going!"
                     nextLevel();
@@ -224,17 +266,6 @@ function playerTurn() {
     }
 }
 
-
-// Image change function depending on round
-function changeImage() {
-    document.querySelector('.starting-image').classList.add('hide')
-    document.querySelector('.victory').classList.remove('hide')
-}
-
-function initialImage() {
-    document.querySelector('.starting-image').classList.remove('hide')
-    document.querySelector('.victory').classList.add('hide')
-}
 
 // Function to progress to next level that loops back to generate move, adds a round and disables player input
 function nextLevel() {

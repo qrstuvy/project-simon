@@ -1,3 +1,4 @@
+​
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +13,20 @@
 </head>
 
 <body>
-
-    <!-- Landing page and instructions ---------------------------------------------------------------------->
+    <!-- Landing page and game div ---------------------------------------------------------------------->
     <button id="enter-game-btn">Enter</button>
     <section class="hide" id="difficulty-div">
         <button class="difficulty-select" id="normal-btn">Normal</button>
         <button class="difficulty-select" id="hard-btn">Hard</button>
     </section>
     <div id="game-div" class="hide">
+        <div id="victory-page">
+            <img src="images/elvictory.png" class="victory hide" id="victory-image">
+            <img src="images/demogameover.png" class="game-over hide" id="game-over-image">
+            <div><button class="hide" id="main-menu">Back to main menu</button></div>
+            <div> <button class="hide" id="game-menu">Back to game</button></div>
+        </div>
+        <!-- Instructions div ---------------------------------------------------------------------------->
         <section class="intro">
             <div id="instructions-div" class="hide">
                 <h2>Instructions</h2>
@@ -40,12 +47,11 @@
             <h3>
                 Help El defeat the demogorgon by reaching <span id="max-rounds-text">5</span> rounds!
             </h3>
-            <img src="images/el.png" class="victory hide">
             <img src="images/eldemo.png" class="starting-image">
             <p><span id="game-text">Let's go!</span></p>
         </section>
 
-<!-- Game grid section ---------------------------------------------------------------------------------------->
+        <!-- Game grid section ---------------------------------------------------------------------------------------->
         <section id="images-container" class="hide">
             <div id="images-grid" class="unclickable">
                 <div class="letters"><img src="images/a.png" id="a"></div>
