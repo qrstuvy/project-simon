@@ -32,14 +32,19 @@ const backBtn = document.getElementById('back')
 
 // Sections, divs, and others------------------------------------------------------------------------------------
 const instructionsPage = document.getElementById('instructions-div')
+
 // Section aside from the game container
 const textSection = document.getElementById('text-section')
+
 // Div that contains the entire grid, game and buttons
 const imagesContainer = document.getElementById('images-container')
+
 // Div that wraps the grid
 const gameDiv = document.getElementById('game-div')
+
 // Div where letters are placed on the grid
 const imagesGrid = document.querySelector('#images-grid')
+
 // Div containing difficulty buttons
 const difficultyPage = document.getElementById('difficulty-div')
 
