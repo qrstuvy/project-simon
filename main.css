@@ -30,8 +30,14 @@ p {
 
 
 /* Initial landing page play button */
+#enter-game-btn {
+    margin-top: 710px;
+    animation: fadeIn 1.2s;
+}
+
 .difficulty-select {
     margin-top: 710px;
+    animation: fadeIn 1.2s;
 }
 
 /* Hidden div that contains the text section and game container-------------------------------------------------- */

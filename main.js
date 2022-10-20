@@ -13,6 +13,12 @@ let round = 0
 let difficulty = null
 
 // Game Buttons-------------------------------------------------------------------------------------------------
+const enterGameBtn = document.getElementById('enter-game-btn')
+
+const normalBtn = document.getElementById('normal-btn')
+
+const hardBtn = document.getElementById('hard-btn')
+
 const instructionsBtn = document.getElementById('instructions-btn')
 
 const okayBtn = document.getElementById('okay-btn')
@@ -22,10 +28,6 @@ const startGameBtn = document.getElementById('start-btn')
 const resetGameBtn = document.querySelector('.reset')
 
 const backBtn = document.getElementById('back')
-
-const normalBtn = document.getElementById('normal-btn')
-
-const hardBtn = document.getElementById('hard-btn')
 
 
 // Sections, divs, and others------------------------------------------------------------------------------------
@@ -42,6 +44,11 @@ const imagesGrid = document.querySelector('#images-grid')
 const difficultyPage = document.getElementById('difficulty-div')
 
 // Event Listeners for buttons-----------------------------------------------------------------------------------
+enterGameBtn.addEventListener('click', () => {
+    difficultyPage.classList.remove('hide')
+    enterGameBtn.classList.add('hide')
+})
+
 startGameBtn.addEventListener('click', newGame)
 
 resetGameBtn.addEventListener('click', clearGame)
@@ -50,8 +57,7 @@ backBtn.addEventListener('click', () => {
     textSection.classList.add('hide')
     imagesContainer.classList.add('hide')
     gameDiv.classList.add('hide')
-    normalBtn.classList.remove('hide')
-    hardBtn.classList.remove('hide')
+    enterGameBtn.classList.remove('hide')
     clearGame()
 })
 
@@ -84,8 +90,7 @@ function loadGame() {
     textSection.classList.remove('hide')
     imagesContainer.classList.remove('hide')
     gameDiv.classList.remove('hide')
-    normalBtn.classList.add('hide')
-    hardBtn.classList.add('hide')
+    difficultyPage.classList.add('hide')
 }
 
 
