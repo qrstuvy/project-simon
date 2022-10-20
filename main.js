@@ -122,12 +122,16 @@ function newGame() {
 
 // Resets game to initial state on reset button click
 function clearGame() {
+    if (difficulty === "normal") {
+        maxRounds.innerText = "5"
+        maxRoundsText.innerText = "5"
+    } else {
+        maxRounds.innerText = "10"
+        maxRoundsText.innerText = "10"
+    }
     currentGame = []
     player = []
     round = 0
-    maxRounds.innerText = "5"
-    maxRoundsText.innerText = "5"
-    difficulty = null
     rounds.innerText = round
     gameText.innerText = "Let's go!"
     startGameBtn.addEventListener('click', newGame)
