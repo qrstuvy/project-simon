@@ -1,12 +1,31 @@
 # Simon game with a Stranger Things Remix
 
 ## Background
-- Start with a landing page that will include a start button as well as an instructions button
+- Classic simon game with 26 possibilities rather than the usual 4 colors based on all of the letters of the alphabet in the Stranger Thing's scene where Christmas lights are hung and lit as letters were selected
+- Start with a landing page that will include a normal and hard difficulty button
 - Pressing instructions will have a pop-up with short details
-- Pressing start will high landing page and bring up game page
 
-## Wireframe
+## Wireframe (Image before production of game)
 ![Quick sketch of game](/images/quicksketch.png)
+
+## Screenshots
+![Landing page screenshot](/images/landingpage.jpg)
+![Game page screenshot](/images/gamepage.jpg)
+
+## Technologies Used
+    - Javascript
+    - HTML
+    - CSS
+    - Paint 3D
+
+## Getting Started
+    - https://qrstuvy.github.io/simon-things/
+
+## Planned future enhancements
+    - Implement a timer that would game-over if player runs out of time
+    - Add on more time as rounds progress
+    - Have sequence playback faster based on level progression and difficulty
+    - Implement a normal mode where mistakes are more forgiving---if player messes up the sequence, the board will replay the sequence and give the player another chance. The current game is only on strict mode which game-overs once the player makes one mistake
 
 ### Pseudocode
 <!-- Player, and currentGame sequence. Counter keeps track of the clicks -->

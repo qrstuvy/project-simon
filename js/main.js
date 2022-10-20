@@ -1,5 +1,7 @@
 // Variables--------------------------------------------------------------------------------------------------
 const rounds = document.getElementById('counter')
+const maxRounds = document.getElementById('max-rounds')
+const maxRoundsText = document.getElementById('max-rounds-text')
 const gameText = document.getElementById('game-text')
 let possibilities = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
@@ -8,21 +10,22 @@ let possibilities = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 let player = []
 let currentGame = []
 let round = 0
+let difficulty = null
 
 // Game Buttons-------------------------------------------------------------------------------------------------
-const playGameBtn = document.getElementById('play-btn')
-
 const instructionsBtn = document.getElementById('instructions-btn')
 
 const okayBtn = document.getElementById('okay-btn')
 
-const startGameBtn = document.querySelector('.start')
-startGameBtn.addEventListener('click', newGame)
+const startGameBtn = document.getElementById('start-btn')
 
 const resetGameBtn = document.querySelector('.reset')
-resetGameBtn.addEventListener('click', clearGame)
 
 const backBtn = document.getElementById('back')
+
+const normalBtn = document.getElementById('normal-btn')
+
+const hardBtn = document.getElementById('hard-btn')
 
 
 // Sections, divs, and others------------------------------------------------------------------------------------
@@ -35,18 +38,23 @@ const imagesContainer = document.getElementById('images-container')
 const gameDiv = document.getElementById('game-div')
 // Div where letters are placed on the grid
 const imagesGrid = document.querySelector('#images-grid')
-
+// Div containing difficulty buttons
+const difficultyPage = document.getElementById('difficulty-div')
 
 // Event Listeners for buttons-----------------------------------------------------------------------------------
+startGameBtn.addEventListener('click', newGame)
+
+resetGameBtn.addEventListener('click', clearGame)
+
 backBtn.addEventListener('click', () => {
     textSection.classList.add('hide')
     imagesContainer.classList.add('hide')
     gameDiv.classList.add('hide')
-    playGameBtn.classList.remove('hide')
+    normalBtn.classList.remove('hide')
+    hardBtn.classList.remove('hide')
     clearGame()
 })
 
-playGameBtn.addEventListener('click', loadGame)
 
 instructionsBtn.addEventListener('click', () => {
     instructionsPage.classList.remove('hide')
@@ -56,13 +64,28 @@ okayBtn.addEventListener('click', () => {
     instructionsPage.classList.add('hide')
 })
 
+normalBtn.addEventListener('click', () => {
+    difficulty = "normal"
+    maxRounds.innerText = "5"
+    maxRoundsText.innerText = "5"
+    loadGame()
+})
+
+hardBtn.addEventListener('click', () => {
+    difficulty = "hard"
+    maxRounds.innerText = "10"
+    maxRoundsText.innerText = "10"
+    loadGame()
+})
+
 
 // Loads game page---------------------------------------------------------------------------------------------------
 function loadGame() {
     textSection.classList.remove('hide')
     imagesContainer.classList.remove('hide')
     gameDiv.classList.remove('hide')
-    playGameBtn.classList.add('hide')
+    normalBtn.classList.add('hide')
+    hardBtn.classList.add('hide')
 }
 
 
@@ -82,9 +105,11 @@ function enableClicks() {
     imagesGrid.addEventListener('click', playerClick)
 }
 
+
 function disableClicks() {
     imagesGrid.classList.add('unclickable')
 }
+
 
 
 // Game functionality/functions when CPU is creating a new item to the sequence---------------------------------
@@ -100,6 +125,9 @@ function clearGame() {
     currentGame = []
     player = []
     round = 0
+    maxRounds.innerText = "5"
+    maxRoundsText.innerText = "5"
+    difficulty = null
     rounds.innerText = round
     gameText.innerText = "Let's go!"
     startGameBtn.addEventListener('click', newGame)
@@ -154,15 +182,29 @@ function playerTurn() {
         disableClicks()
     } else {
         if (player.length === currentGame.length) {
-            if (round == 5) {
-                gameText.innerText = "Congratulations! You did it!"
-                changeImage()
-            } else if (round == 2) {
-                gameText.innerText = "WOW LOOK AT YOU! Keep going!"
-                nextLevel();
-            } else {
-                gameText.innerText = "Nice! Next round!"
-                nextLevel();
+            if (difficulty === "normal") {
+                if (round == 5) {
+                    gameText.innerText = "Congratulations! You did it!"
+                    changeImage()
+                } else if (round == 2) {
+                    gameText.innerText = "WOW LOOK AT YOU! Keep going!"
+                    nextLevel();
+                } else {
+                    gameText.innerText = "Nice! Next round!"
+                    nextLevel();
+                }
+            }
+            else {
+                if (round == 10) {
+                    gameText.innerText = "Congratulations! You did it!"
+                    changeImage()
+                } else if (round == 5) {
+                    gameText.innerText = "WOW LOOK AT YOU! Keep going!"
+                    nextLevel();
+                } else {
+                    gameText.innerText = "Nice! Next round!"
+                    nextLevel();
+                }
             }
         }
     }

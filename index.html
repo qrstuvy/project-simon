@@ -12,10 +12,14 @@
 </head>
 
 <body>
+
+
+
     <!-- Landing page and instructions ---------------------------------------------------------------------->
-    <button id="play-btn">Play Game</button>
+    <button class="difficulty-select" id="normal-btn">Normal</button>
+    <button class="difficulty-select" id="hard-btn">Hard</button>
     <div id="game-div" class="hide">
-        <section id="intro">
+        <section class="intro">
             <div id="instructions-div" class="hide">
                 <h2>Instructions</h2>
                 <p>Classic Simon game with a Stranger Things twist.</p>
@@ -26,15 +30,14 @@
             </div>
         </section>
 
-
-
         <!-- Game grid section -------------------------------------------------------------------------------->
         <section id="text-section" class="hide">
             <div id="rounds-div">
-                <p id="round-text"><strong>Round: </strong><br><span id="counter">0</span> of 5</p>
+                <p id="round-text"><strong>Round: </strong><br><span id="counter">0</span> of <span
+                        id="max-rounds">5</span></p>
             </div>
             <h3>
-                Help El defeat the demogorgon by reaching 5 rounds!
+                Help El defeat the demogorgon by reaching <span id="max-rounds-text">5</span> rounds!
             </h3>
             <img src="/images/el.png" class="victory hide">
             <img src="/images/eldemo.png" class="starting-image">
@@ -71,11 +74,12 @@
                 <div class="letters"><img src="images/y.png" id="y"></div>
                 <div class="letters"><img src="images/z.png" id="z"></div>
             </div>
-            <button class="start">Start Game</button>
+            <button id="start-btn">Start Game</button>
             <button class="reset">Reset</button>
             <button id="instructions-btn">Instructions</button>
             <button id="back">Back</button>
         </section>
+
 </body>
 
 </html>
