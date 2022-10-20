@@ -1,6 +1,6 @@
 /* General body, heading and p styling---------------------------------------------------------------------------- */
 body {
-    background-image: url('/images/simonthings.png');
+    background-image: url('images/simonthings.png');
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -55,7 +55,7 @@ p {
     border-radius: 12px;
     margin: 100px 23px;
     padding: 6px;
-    background-image: url('/images/lights.png');
+    background-image: url('images/lights.png');
     background-repeat: no-repeat;
     background-size: contain;
     animation: fadeIn 1.2s;
@@ -130,7 +130,7 @@ button:hover {
     left: 30%;
     z-index: 1;
     border-radius: 10px;
-    background-image: url('/images/blueboard.png');
+    background-image: url('images/blueboard.png');
     padding: 0 0 10px 0;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
