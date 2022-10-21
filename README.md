@@ -4,10 +4,6 @@
 
 - Classic simon game with 26 possibilities rather than the usual 4 colors based on all of the letters of the alphabet in the Stranger Thing's scene where Christmas lights are hung and lit as letters were selected
 
-- Start with a landing page that will include a normal and hard difficulty button
-
-- Pressing instructions will have a pop-up with short details
-
 ## Wireframe (Image before production of game)
 
 ![Quick sketch of game](/images/quicksketch.png)
@@ -20,14 +16,26 @@
 
 ## Technologies Used
 
-    - Javascript
-    - HTML
-    - CSS
+    - JavaScript ES6
+    - HTML5
+    - CSS 3
     - Paint 3D
 
 ## Getting Started
 
     - https://qrstuvy.github.io/simon-things/
+
+    - Landing page allows player to choose between two difficulties: normal and hard
+
+    - Normal difficulty goes for 5 rounds while hard goes for 10 rounds to win
+
+    - Player must repeat pattern that the computer generates
+
+    - Pressing instructions will have a pop-up with short details
+
+    - Pressing reset will reset the rounds and game to initial state
+
+    - Option to go return to the game or return back to main menu on the victory/game-over screen
 
 ## Planned future enhancements
 
@@ -38,6 +46,7 @@
     - Have sequence playback faster based on level progression and difficulty
 
     - Implement a normal mode where mistakes are more forgiving---if player messes up the sequence, the board will replay the sequence and give the player another chance. The current game is only on strict mode which game-overs once the player makes one mistake
+
 
 ### Pseudocode
 

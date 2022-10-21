@@ -198,13 +198,15 @@ function addRound() {
 }
 
 // Function to generate a random move
+// time it takes to generate a move to give time between players last move and cpu first move
 function generateMove() {
     currentGame.push(possibilities[(Math.floor(Math.random() * possibilities.length))])
     setTimeout(() => {
         showSequence()
-    }, "600")
+    }, 600)
 }
 // Function that replays/shows entire sequence to player in addition to the newly generated move
+// time between each move
 function showSequence() {
     let i = 0;
     let sequence = setInterval(function () {
@@ -219,6 +221,7 @@ function showSequence() {
 }
 
 // Function nested into the showSequence function to flash letters by adding .active containing a white bg-color
+// time here determines how long light stays flashed for
 function gamePlay(sequence) {
     const image = imagesGrid.querySelector(`#${sequence}`)
     image.classList.add('active')
