@@ -22,6 +22,7 @@
     - Paint 3D
 
 ## Info
+
 [Simon Game Link](https://qrstuvy.github.io/simon-things/)
 
 ## Getting Started
