@@ -21,9 +21,10 @@
     - CSS 3
     - Paint 3D
 
-## Getting Started
+## Info
+[Simon Game Link](https://qrstuvy.github.io/simon-things/)
 
-    - https://qrstuvy.github.io/simon-things/
+## Getting Started
 
     - Landing page allows player to choose between two difficulties: normal and hard
 
